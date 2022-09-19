@@ -1,0 +1,9 @@
+{% for note in notes %}
+<div class="card w-96 bg-base-100 shadow-xl m-3 border-solid border-2 border-transparent hover:border-2 hover:border-indigo-600 border-gray-200 dark:border-gray-700 duration-300">
+    <div class="card-body">
+      <h2 class="card-title">{{ note.title }}</h2>
+      {% comment %} <p>{{ note.description }}</p> {% endcomment %}
+    </div>
+    <button hx-post="notes/delete/{{ note.id }}" hx-target="#notes-list" type="submit" class="btn bg-transparent border-none hover:bg-transparent text-transparent no-animation">Delete</button>
+</div>
+{% endfor %}

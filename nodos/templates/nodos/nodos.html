@@ -1,0 +1,21 @@
+{% extends 'nodos/base.html' %}
+
+{% block content %}
+<div class="container mx-auto justify-items-center text-center">
+        <label for="modal-note-add" class="btn btn-primary btn-wide modal-button m-3">+ Notes</label>
+        <div id="notes-list" hx-get="/htmx/notes/list_notes" hx-trigger="load" class="flex flex-wrap"></div>
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="modal-note-add" class="modal-toggle" />
+        <label for="modal-note-add" class="modal modal-bottom sm:modal-middle cursor-pointer backdrop-blur-md">
+            <label class="modal-box relative" for="">
+                <form>
+                    {% csrf_token %}
+                    <input type="text" name='title' id='title' placeholder='Title' class="input input-primary w-max m-2">
+                    <textarea name="description" id="description" placeholder="Description" class="textarea textarea-primary m-2"></textarea>
+                    <br>
+                    <button hx-post="/notes/add" hx-target="#notes-list" type="submit" class="btn btn-primary m-2">Add</button>
+                </form>
+            </label>
+        </label>
+</div>
+{% endblock content %}
