@@ -1,0 +1,3 @@
+hyperscript=https://unpkg.com/hyperscript.org@0.9.7/dist/_hyperscript.min.js
+alpinejs=https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js
+htmx=https://unpkg.com/htmx.org@1.8.0/dist/htmx.min.js

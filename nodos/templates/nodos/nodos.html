@@ -8,12 +8,13 @@
         <input type="checkbox" id="modal-note-add" class="modal-toggle" />
         <label for="modal-note-add" class="modal modal-bottom sm:modal-middle cursor-pointer backdrop-blur-md">
             <label class="modal-box relative" for="">
-                <form>
+                <form x-data="{ title: ''}">
                     {% csrf_token %}
-                    <input type="text" name='title' id='title' placeholder='Title' class="input input-primary w-max m-2">
+                    <input x-model="title" type="text" name='title' id='title' placeholder='Title' class="input input-primary w-max m-2">
+                    <br>
                     <textarea name="description" id="description" placeholder="Description" class="textarea textarea-primary m-2"></textarea>
                     <br>
-                    <button hx-post="/notes/add" hx-target="#notes-list" type="submit" class="btn btn-primary m-2">Add</button>
+                    <button _="on click set #title.value to '' then set #description.value to '' then set #modal-note-add.checked to false" hx-post="/notes/add" hx-target="#notes-list" type="submit" class="btn btn-primary m-2">Add</button>
                 </form>
             </label>
         </label>
