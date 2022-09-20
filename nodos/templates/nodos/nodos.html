@@ -3,9 +3,11 @@
 {% block content %}
 <div class="container mx-auto justify-items-center text-center">
         <label for="modal-note-add" class="btn btn-primary btn-wide modal-button m-3">+ Notes</label>
-        <div id="notes-list" hx-get="/htmx/notes/list_notes" hx-trigger="load" class="flex flex-wrap"></div>
-        <!-- Put this part before </body> tag -->
+        <div id="notes-list" hx-get="{% url 'get-notes' %}" hx-trigger="load" class="flex flex-wrap"></div>
+        
+        <!-- The button to open modal -->
         <input type="checkbox" id="modal-note-add" class="modal-toggle" />
+        
         <label for="modal-note-add" class="modal modal-bottom sm:modal-middle cursor-pointer backdrop-blur-md">
             <label class="modal-box relative" for="">
                 <form x-data="{ title: ''}">
