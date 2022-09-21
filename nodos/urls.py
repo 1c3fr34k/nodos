@@ -25,5 +25,7 @@ urlpatterns = [
     path('notes/add', views.add_note, name="add-note"),
     path('notes/delete/<int:id>', views.delete_note, name="delete-note"),
     
-    path('notes/get/all', views.htmx_get_notes, name="get-notes"),
+    path('notes/get/all', views.get_notes, name="get-notes"),
+    
+    path('notes/done/<int:id>', views.done_note)
 ]

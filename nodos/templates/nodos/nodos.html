@@ -10,7 +10,7 @@
         
         <label for="modal-note-add" class="modal modal-bottom sm:modal-middle cursor-pointer backdrop-blur-md">
             <label class="modal-box relative" for="">
-                <form x-data="{ title: ''}">
+                <form>
                     {% csrf_token %}
                     <input x-model="title" type="text" name='title' id='title' placeholder='Title' class="input input-primary w-max m-2">
                     <br>
