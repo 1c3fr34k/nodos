@@ -12,4 +12,4 @@
     - Hyperscript
     - Alpinejs
 
-![](Nodos.gif)
+![](Nodos2.gif)
