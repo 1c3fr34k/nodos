@@ -8,9 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nodos</title>
+    <link rel="stylesheet" href="{% static 'css/sweetalert2.min.css' %}">
     {% tailwind_css %}
   </head>
   <body>
+    <!-- Navbar -->
     {% include 'nodos/components/navbar.html' %}
     
     <div class="mt-4"></div>
@@ -18,12 +20,11 @@
     {% block content %}{% endblock content %}
     
     
+    <!-- Scripts -->
     <script src="{% static 'js/htmx.min.js' %}"></script>
     <script src="{% static 'js/hyperscript.min.js' %}"></script>
-    <script src="{% static 'js/alpinejs.min.js' %}"></script>
-    <!--<script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>-->
-    
+    <script src="{% static 'js/alpinejs.min.js' %}"></script> 
+    <script src="{% static 'js/sweetalert2.min.js' %}"></script>   
     <script>
       document.body.addEventListener('htmx:configRequest', (event) => {
         event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
