@@ -1,4 +1,3 @@
-from re import template
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
@@ -32,27 +31,19 @@ def add_note(request):
     data = Note.objects.all()
     title = request.POST.get("title")
     description = request.POST.get("description")
-    # done = request.POST.get('note-done')
     context = {"notes": data}
     template = "nodos/htmx/list_notes.html"
 
     if title:
         note = Note(title=title, description=description)
         note.save()
-        # return HttpResponse('success')
         return render(request, template, context)
     return render(request, template, context)
 
 
 def delete_note(request, id):
-    data = Note.objects.all()
     note = Note.objects.filter(pk=id)
     note.delete()
-
-    context = {"notes": data}
-    template = "nodos/htmx/list_notes.html"
-
-    # return render(request, template, context)
     return HttpResponse("")
 
 
