@@ -4,6 +4,10 @@ from django.urls import reverse
 from .models import Note
 
 
+def index(request):
+    return HttpResponseRedirect("/notes")
+
+
 def notes(request):
     return render(request, "nodos/nodos.html")
 
