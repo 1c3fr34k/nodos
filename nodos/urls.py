@@ -20,6 +20,7 @@ from nodos import views
 urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("admin/", admin.site.urls),
+    path("", views.index),
     path("notes", views.notes, name="nodos"),
     path("notes/add", views.add_note, name="add-note"),
     path("notes/delete/<int:id>", views.delete_note, name="delete-note"),
