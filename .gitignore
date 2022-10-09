@@ -173,3 +173,9 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 .DS_Store
+.idea/misc.xml
+.idea/modules.xml
+.idea/nodos.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
