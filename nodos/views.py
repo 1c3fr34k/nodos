@@ -18,17 +18,9 @@ def get_notes(request):
     # notes_done = Note.objects.filter(done=True)
 
     context = {"notes": notes}
-    template = "nodos/htmx/list_notes.html"
+    template = "nodos/components/list_notes.html"
 
     return render(request, template, context)
-
-
-# def get_single_note(request, id):
-#     note = Note.objects.filter(pk=id)
-#     context = {"note": note}
-#     template = "nodos/htmx/list_notes.html"
-
-#     return render(request, template, context)
 
 
 def add_note(request):
@@ -36,7 +28,7 @@ def add_note(request):
     title = request.POST.get("title")
     description = request.POST.get("description")
     context = {"notes": data}
-    template = "nodos/htmx/list_notes.html"
+    template = "nodos/components/list_notes.html"
 
     if title:
         note = Note(title=title, description=description)
@@ -59,7 +51,7 @@ def done_note(request, id):
     # print(list(note.values())[0]["done"])
 
     context = {"notes": note}
-    template = "nodos/htmx/list_notes.html"
+    template = "nodos/components/list_notes.html"
 
     if note_done == True:
         note.update(done=0)
