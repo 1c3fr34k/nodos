@@ -27,4 +27,5 @@ urlpatterns = [
     # path("notes/get/<int:id>", views.get_single_note),
     path("notes/get/all", views.get_notes, name="get-notes"),
     path("notes/done/<int:id>", views.done_note),
+    path("notes/progress", views.progressbar, name="progressbar"),
 ]
