@@ -1,3 +1,4 @@
+from re import template
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
@@ -18,7 +19,7 @@ def get_notes(request):
     # notes_done = Note.objects.filter(done=True)
 
     context = {"notes": notes}
-    template = "nodos/components/list_notes.html"
+    template = "nodos/components/notes_card.html"
 
     return render(request, template, context)
 
@@ -28,7 +29,7 @@ def add_note(request):
     title = request.POST.get("title")
     description = request.POST.get("description")
     context = {"notes": data}
-    template = "nodos/components/list_notes.html"
+    template = "nodos/components/notes_card.html"
 
     if title:
         note = Note(title=title, description=description)
@@ -51,7 +52,7 @@ def done_note(request, id):
     # print(list(note.values())[0]["done"])
 
     context = {"notes": note}
-    template = "nodos/components/list_notes.html"
+    template = "nodos/components/notes_card.html"
 
     if note_done == True:
         note.update(done=0)
@@ -59,3 +60,13 @@ def done_note(request, id):
     elif note_done == False:
         note.update(done=1)
         return render(request, template, context)
+
+
+def progressbar(request):
+    count_done = Note.objects.filter(done=True).count()
+    count_all = Note.objects.count()
+
+    context = {"count_done": count_done, "count_all": count_all}
+    template = "nodos/components/progressbar.html"
+
+    return render(request, template, context)
