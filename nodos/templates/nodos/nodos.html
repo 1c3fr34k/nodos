@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container mx-auto justify-items-center text-center">
         <label for="modal-note-add" class="btn btn-primary btn-wide modal-button m-3">+ Notes</label>
-        <div hx-get="{% url 'progressbar' %}" hx-trigger="load, change from:body"></div>
+        <div hx-get="{% url 'progressbar' %}" hx-trigger="load from:body, change from:body delay:20ms, click from:body delay:20ms"></div>
         <div id="notes-list" hx-get="{% url 'get-notes' %}" hx-trigger="load" class="flex flex-wrap justify-center"></div>
         
         <!-- The button to open modal -->
