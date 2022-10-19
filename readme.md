@@ -10,6 +10,5 @@
     - Daisyui
     - HTMX
     - Hyperscript
-    - Alpinejs
 
-![](Nodos2.gif)
+![](Nodos3.gif)
