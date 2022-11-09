@@ -11,4 +11,4 @@
     - HTMX
     - Hyperscript
 
-![](Nodos3.gif)
+![](images/Nodos3.gif)

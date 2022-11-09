@@ -24,6 +24,17 @@ def get_notes(request):
     return render(request, template, context)
 
 
+def get_notes_list(request):
+    notes = Note.objects.all()
+    # notes = Note.objects.filter(done=False)
+    # notes_done = Note.objects.filter(done=True)
+
+    context = {"notes": notes}
+    template = "nodos/components/notes_list.html"
+
+    return render(request, template, context)
+
+
 def add_note(request):
     data = Note.objects.all()
     title = request.POST.get("title")

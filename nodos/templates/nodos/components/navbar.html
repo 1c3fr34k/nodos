@@ -1,6 +1,6 @@
 <div class="navbar bg-primary text-primary-content">
   <div class="navbar-start">
-      <span> </span>
+    <input type="checkbox" class="toggle" hx-get="{% url 'get-notes-list' %}" hx-target="#notes-list"/>
   </div>
   <div class="navbar-center">
     <a class="btn btn-ghost normal-case text-xl">Nodos</a>
